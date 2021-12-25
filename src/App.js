@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import boxes from './boxes';
+import Box from './Box';
 
-function App(props) {
+function App() {
   // console.log(boxes)
   const [squareArray, setSquareArray] = useState(boxes)
   
-  const styles = {backgroundColor : props.darkMode ?  "#222222" : "#cccccc"}
+  
 
-  const squareEl = squareArray.map(squares => (<div style={styles} className = "box" key ={squareArray.id}></div>))
+  const squareEl = squareArray.map(square => (<Box key ={square.id} on = {square.on}/>)) 
   return (
     <div>
       {squareEl}
